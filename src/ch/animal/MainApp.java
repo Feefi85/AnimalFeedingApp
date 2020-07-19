@@ -36,6 +36,8 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	
+	private boolean dataEdited = false;
+	
 	/**
      * The data as an observable list of Animals.
      */
@@ -170,7 +172,12 @@ public class MainApp extends Application {
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
 
-            return controller.isOkClicked();
+            if (controller.isOkClicked()) {
+            	setEdited(true);
+            	return true;
+            } else {
+            	return false;
+            }
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -225,17 +232,18 @@ public class MainApp extends Application {
         try {
         	if(file.exists() ) {
         		
-            JAXBContext context = JAXBContext.newInstance(AnimalListWrapper.class);
-            Unmarshaller um = context.createUnmarshaller();
-
-            // Reading XML from the file and unmarshalling
-            AnimalListWrapper wrapper = (AnimalListWrapper) um.unmarshal(file);
-
-            animalData.clear();
-            animalData.addAll(wrapper.getAnimals());
-
-            // Save the file path to the registry
-            setAnimalFilePath(file);
+	            JAXBContext context = JAXBContext.newInstance(AnimalListWrapper.class);
+	            Unmarshaller um = context.createUnmarshaller();
+	
+	            // Reading XML from the file and unmarshalling
+	            AnimalListWrapper wrapper = (AnimalListWrapper) um.unmarshal(file);
+	
+	            animalData.clear();
+	            animalData.addAll(wrapper.getAnimals());
+	
+	            // Save the file path to the registry
+	            setAnimalFilePath(file);
+	            setEdited(false);
         	}
 
         } catch (Exception e) { 
@@ -269,6 +277,7 @@ public class MainApp extends Application {
 
             // Save the file path to the registry
             setAnimalFilePath(file);
+            setEdited(false);
         } catch (Exception e) { 
         	// catches ANY exception
             Alert alert = new Alert(AlertType.ERROR);
@@ -280,4 +289,19 @@ public class MainApp extends Application {
         }
     }
     
+    /**
+     * Sets a flag to indicate if data was modified in memory
+     * @param edited set to true if data was modified
+     */
+    public void setEdited(boolean edited) {
+    	dataEdited = edited;
+    }
+    
+    /**
+     * Returns a flag to indicate if data was modified in memory
+     * @return true if modified
+     */
+    public boolean getEdited() {
+    	return dataEdited;
+    }
 }

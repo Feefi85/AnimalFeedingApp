@@ -143,7 +143,7 @@ public class RootLayoutController {
     @FXML
     private void handleExit() {
         File animalFile = mainApp.getAnimalFilePath();
-        if (animalFile != null) {
+    	if (mainApp.getEdited()) {
         	ButtonType speichern = new ButtonType("Speichern", ButtonBar.ButtonData.OK_DONE);
             ButtonType verwerfen = new ButtonType("Verwerfen", ButtonBar.ButtonData.CANCEL_CLOSE);
 
@@ -152,10 +152,10 @@ public class RootLayoutController {
             		speichern, verwerfen);            
             Optional<ButtonType> result = alert.showAndWait();
             if (result.orElse(verwerfen) == speichern) {
-            	mainApp.saveAnimalDataToFile(animalFile); 
-            }
-        }
-        
+            	handleSave();
+            }    		
+    	}
+    	
         System.exit(0);
     }
 
