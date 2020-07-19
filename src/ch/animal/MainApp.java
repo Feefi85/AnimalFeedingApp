@@ -25,6 +25,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+/**
+ * MainApp of the Animal Feeding App
+ * 
+ */
 
 public class MainApp extends Application {
 	
@@ -53,7 +57,7 @@ public class MainApp extends Application {
     
     /**
      * Returns the data as an observable list of Animals. 
-     * @return
+     * @return observable list of Animals
      */
     public ObservableList<Animal> getAnimalData() {
     	return animalData;
@@ -125,7 +129,7 @@ public class MainApp extends Application {
     
     /**
      * Returns the main stage.
-     * @return
+     * @return main stage
      */
     public Stage getPrimaryStage() {
         return primaryStage;
@@ -174,11 +178,11 @@ public class MainApp extends Application {
     }
     
     /**
-     * Returns the animal file preference, i.e. the file that was last opened.
+     * Returns the path to the preferences file, i.e. the file that was last opened.
      * The preference is read from the OS specific registry. If no such
      * preference can be found, null is returned.
      * 
-     * @return
+     * @return path to preferences file
      */
     public File getAnimalFilePath() {
         Preferences prefs = Preferences.userNodeForPackage(MainApp.class);
@@ -215,7 +219,7 @@ public class MainApp extends Application {
      * Loads animal data from the specified file. The current animal data will
      * be replaced.
      * 
-     * @param file
+     * @param file file to open
      */
     public void loadAnimalDataFromFile(File file) {
         try {
@@ -248,7 +252,7 @@ public class MainApp extends Application {
     /**
      * Saves the current animal data to the specified file.
      * 
-     * @param file
+     * @param file file to save
      */
     public void saveAnimalDataToFile(File file) {
         try {

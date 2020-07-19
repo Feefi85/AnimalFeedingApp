@@ -61,7 +61,7 @@ public class AnimalEditDialogController {
     /**
      * Sets the stage of this dialog.
      * 
-     * @param dialogStage
+     * @param dialogStage sets the stage of the dialog
      */
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
@@ -70,7 +70,7 @@ public class AnimalEditDialogController {
     /**
      * Sets the animal to be edited in the dialog.
      * 
-     * @param animal
+     * @param animal sets the animal to be edited
      */
     public void setAnimal(Animal animal) {
         this.animal = animal;
@@ -90,7 +90,7 @@ public class AnimalEditDialogController {
     /**
      * Returns true if the user clicked OK, false otherwise.
      * 
-     * @return
+     * @return  true if ok, false otherwise
      */
     public boolean isOkClicked() {
         return okClicked;

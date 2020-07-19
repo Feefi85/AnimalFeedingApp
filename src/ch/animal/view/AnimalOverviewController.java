@@ -10,6 +10,10 @@ import ch.animal.MainApp;
 import ch.animal.model.Animal;
 import ch.animal.util.DateUtil;
 
+/**
+ * Overview Controller of animals
+ * 
+ */
 public class AnimalOverviewController {
 	
     @FXML
@@ -65,7 +69,7 @@ public class AnimalOverviewController {
     /**
      * Is called by the main application to give a reference back to itself.
      * 
-     * @param mainApp
+     * @param mainApp mainApp of the application
      */
     public void setMainApp(MainApp mainApp) {
     	this.mainApp = mainApp;

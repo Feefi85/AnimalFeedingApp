@@ -35,8 +35,8 @@ public class Animal {
     /**
      * Constructor with some initial data.
      * 
-     * @param tierArt
-     * @param futterArt
+     * @param tierArt initial value
+     * @param futterArt initial value
      */
     public Animal(String tierArt, String futterArt) {
     	this.tierArt = new SimpleStringProperty(tierArt);
