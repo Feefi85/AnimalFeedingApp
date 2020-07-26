@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.animal.view.AnimalOverviewController">
    <children>
@@ -19,7 +20,7 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <TableView fx:id="animalTable" layoutX="-12.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="animalTable" layoutX="-12.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b2d8b4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                       		<TableColumn fx:id="tierArtColumn" prefWidth="75.0" text="Tier Art" />
                       		<TableColumn fx:id="futterArtColumn" prefWidth="75.0" text="Futter Art" />
@@ -30,10 +31,13 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="500.0" style="-fx-background-color: #00855a; -fx-border-color: #ffffff;">
                      <children>
-                        <Label layoutX="14.0" layoutY="6.0" text="Animal Details" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                        <GridPane layoutX="159.0" layoutY="95.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="30.0">
+                        <Label layoutX="14.0" layoutY="6.0" text="Übersicht" textFill="WHITE" underline="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font name="Courier Bold" size="26.0" />
+                           </font></Label>
+                        <GridPane layoutX="159.0" layoutY="95.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="50.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="130.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -47,25 +51,62 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                        	<Label text="Tier Art" />
-                        	<Label text="Futter Art" GridPane.rowIndex="1" />
-                        	<Label text="Aktueller Bestand" GridPane.rowIndex="2" />
-                        	<Label text="Mengeneinheit" GridPane.rowIndex="3" />
-                        	<Label text="Bestellung notwendig" GridPane.rowIndex="4" />
-                        	<Label text="Bestelldatum" GridPane.rowIndex="5" />
-                        	<Label fx:id="tierArtLabel" prefHeight="17.0" prefWidth="133.0" text="Label" GridPane.columnIndex="1" />
-                        	<Label fx:id="futterArtLabel" prefHeight="17.0" prefWidth="134.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        	<Label fx:id="aktuellerBestandLabel" prefHeight="17.0" prefWidth="120.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        	<Label fx:id="mengeneinheitLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        	<Label fx:id="bestellungnotwendigLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        	<Label fx:id="bestelldatumLabel" prefHeight="17.0" prefWidth="66.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        	<Label text="Tier Art" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label text="Futter Art" textFill="WHITE" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label text="Aktueller Bestand" textFill="WHITE" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label text="Mengeneinheit" textFill="WHITE" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label text="Bestellung notwendig" textFill="WHITE" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label text="Bestelldatum" textFill="WHITE" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label fx:id="tierArtLabel" prefHeight="17.0" prefWidth="133.0" text="Label" textFill="WHITE" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label fx:id="futterArtLabel" prefHeight="17.0" prefWidth="134.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label fx:id="aktuellerBestandLabel" prefHeight="17.0" prefWidth="120.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label fx:id="mengeneinheitLabel" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label fx:id="bestellungnotwendigLabel" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
+                        	<Label fx:id="bestelldatumLabel" prefHeight="17.0" prefWidth="66.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Label>
                            </children>
                         </GridPane>
                         <ButtonBar layoutX="126.0" layoutY="244.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
                           <buttons>
-                            <Button mnemonicParsing="false" onAction="#handleNewAnimal" text="New...." />
-                              <Button mnemonicParsing="false" onAction="#handleEditAnimal" text="Edit" />
-                              <Button mnemonicParsing="false" onAction="#handleDeleteAnimal" text="Delete" />
+                              <Button mnemonicParsing="false" onAction="#handleEditAnimal" text="Editieren" />
+                              <Button mnemonicParsing="false" onAction="#handleDeleteAnimal" text="Löschen" />
+                            <Button mnemonicParsing="false" onAction="#handleNewAnimal" text="Neu..." />
+                              <Button mnemonicParsing="false" onAction="#handleCopyAnimal" text="Kopieren" />
                           </buttons>
                         </ButtonBar>
                      </children>

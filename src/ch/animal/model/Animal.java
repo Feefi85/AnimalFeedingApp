@@ -14,6 +14,8 @@ import javafx.beans.property.StringProperty;
 
 /**
  * Model class for an Animal with all needed inputs/informations.
+ * @author Damian Krebs  
+ * @author Stephanie Gloor
  */
 
 public class Animal {

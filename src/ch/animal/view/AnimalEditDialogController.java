@@ -16,7 +16,8 @@ import ch.animal.model.Animal;
 
 /**
  * Dialog to edit details of an animal.
- * 
+ * @author Damian Krebs  
+ * @author Stephanie Gloor
  */
 
 public class AnimalEditDialogController {

@@ -6,13 +6,16 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import ch.animal.MainApp;
 import ch.animal.model.Animal;
 import ch.animal.util.DateUtil;
 
 /**
  * Overview Controller of animals
- * 
+ * @author Damian Krebs  
+ * @author Stephanie Gloor
  */
 public class AnimalOverviewController {
 	
@@ -116,9 +119,9 @@ public class AnimalOverviewController {
     		// Nothing selected.
     		Alert alert = new Alert(AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Animal Selected");
-            alert.setContentText("Please select an animal in the table.");
+            alert.setTitle("Keine Auswahl");
+            alert.setHeaderText("Kein Tier ausgewählt");
+            alert.setContentText("Bitte Tier auswählen");
 
             alert.showAndWait();
     	}
@@ -154,11 +157,40 @@ public class AnimalOverviewController {
     		// Nothing selected.
     		Alert alert = new Alert(AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No Animal Selected");
-            alert.setContentText("Please select an animal in the table.");
+            alert.setTitle("Keine Auswahl");
+            alert.setHeaderText("Kein Tier ausgewählt");
+            alert.setContentText("Bitte Tier auswählen");
             
             alert.showAndWait();
     	}
     }
+    /**
+     * Called when the user clicks the copy button. Copies all data in
+     * clipboard for using in other programs
+     */
+    @FXML
+    private void handleCopyAnimal() {
+    	Animal selectedAnimal = animalTable.getSelectionModel().getSelectedItem();
+    	if (selectedAnimal != null) {
+    		ClipboardContent content = new ClipboardContent();
+    		String text= "Tier Art: "+selectedAnimal.getTierArt()+System.lineSeparator()+
+    				"Futter Art: "+selectedAnimal.getFutterArt()+System.lineSeparator()+
+    				"Aktueller Bestand: "+selectedAnimal.getAktuellerBestand()+" "+selectedAnimal.getMengeneinheit()+System.lineSeparator()+
+    				"Bestellung notwendig: "+selectedAnimal.getBestellungnotwendig()+System.lineSeparator()+
+    				"Bestelldatum: "+selectedAnimal.getBestelldatum()+System.lineSeparator();
+    		content.putString(text);
+    		Clipboard.getSystemClipboard().setContent(content); 
+    		
+    	} else { 
+    		// Nothing selected.
+    		Alert alert = new Alert(AlertType.WARNING);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("Keine Auswahl");
+            alert.setHeaderText("Kein Tier ausgewählt");
+            alert.setContentText("Bitte Tier auswählen");
+            
+            alert.showAndWait();
+    	}
+    }
+
 }

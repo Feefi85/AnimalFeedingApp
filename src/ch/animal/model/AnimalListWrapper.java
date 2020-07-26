@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Helper class to wrap a list of animals. This is used for saving the
  * list of animals to an XML File.
+ * @author Damian Krebs  
+ * @author Stephanie Gloor
  */
 @XmlRootElement(name = "animals")
 @XmlAccessorType(XmlAccessType.PROPERTY)

@@ -27,13 +27,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 /**
  * MainApp of the Animal Feeding App
- * 
+ * @author Damian Krebs  
+ * @author Stephanie Gloor
  */
 
 public class MainApp extends Application {
 	
 	// Instance variables
-	private Stage primaryStage;
+	private Stage primaryStage; 
 	private BorderPane rootLayout;
 	
 	private boolean dataEdited = false;

@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * Helper functions for handling dates.
+ * @author Damian Krebs  
+ * @author Stephanie Gloor
  */
 
 public class DateUtil {
