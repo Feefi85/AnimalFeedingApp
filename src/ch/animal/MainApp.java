@@ -35,7 +35,7 @@ public class MainApp extends Application {
 	
 	// Instance variables
 	private Stage primaryStage; 
-	private BorderPane rootLayout;
+	private BorderPane rootLayout; 
 	
 	private boolean dataEdited = false;
 	
@@ -49,9 +49,9 @@ public class MainApp extends Application {
      */
     public MainApp() {
         // Add some sample data to not start with an empty list
-        animalData.add(new Animal("Rind", "Mais"));
-        animalData.add(new Animal("Kalb", "Heu"));
-        animalData.add(new Animal("Pferd", "Gras"));
+        animalData.add(new Animal("Rind", "Mais")); 
+        animalData.add(new Animal("Kalb", "Heu")); 
+        animalData.add(new Animal("Pferd", "Gras")); 
         animalData.add(new Animal("Pony", "Hafer"));
         animalData.add(new Animal("Schwein", "Grünfutter"));
         animalData.add(new Animal("Huhn", "Körner"));
